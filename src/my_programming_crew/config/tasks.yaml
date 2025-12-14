@@ -1,0 +1,104 @@
+business_analysis_task:
+  description: >
+    Przeanalizuj wymagania aby stworzyć szczegółowe specyfikacje biznesowe.
+    
+    Transformuj wymagania w strukturyzowane specyfikacje biznesowe:
+    - User stories w formacie "Jako... Chcę... Aby..."
+    - Reguły biznesowe i ograniczenia
+    - Modele danych (encje i atrybuty)
+    - Wymagania jakościowe (wydajność, bezpieczeństwo, użyteczność)
+    
+    Identyfikuj niejasności i przypadki brzegowe.
+    Oceń złożoność projektu i zaleć logiczną strukturę modułów.
+  expected_output: >
+    BusinessRequirements z user stories, regułami biznesowymi, modelami danych,
+    wymaganiami jakościowymi, oceną zakresu (1-10) i oceną złożoności.
+  agent: business_analyst
+
+design_task:
+  description: >
+    Stwórz szczegółowy podział modułów definiujący całą architekturę aplikacji.
+    
+    Podziel aplikację na 3-6 logicznych modułów. Dla każdego modułu zdefiniuj
+    wszystkie klasy z: nazwą (PascalCase), odpowiedzialnością, metodami,
+    atrybutami, zależnościami i złożonością.
+    
+    Stosuj zasady: separacja zainteresowań, brak cyklicznych zależności,
+    projektowanie napędzane domeną.
+  expected_output: >
+    ModuleBreakdown z nazwą projektu, listą modułów i klas, kolejnością integracji,
+    grafem zależności i notatkami architektonicznymi.
+    Celuj w 3-6 modułów z 2-4 klasami każdy.
+  agent: engineering_lead
+
+architecture_task:
+  description: >
+    Zaprojektuj architekturę backendu: schemat bazy danych, strukturę API,
+    warstwę usług i wzorce dostępu do danych.
+    
+    Stosuj architekturę warstwową z jasną separacją zainteresowań
+    i inwersją zależności.
+  expected_output: >
+    BackendArchitecture z projektem bazy danych, specyfikacją API,
+    strukturą warstwy usług i diagramem architektury.
+  agent: backend_architect
+
+frontend_task:
+  description: >
+    Stwórz wieloplikowy, komponentowy interfejs użytkownika używając Gradio.
+    
+    Struktura: main_app.py, components/, styles/, utils/.
+    Używaj odpowiednich komponentów Gradio i implementuj obsługę błędów,
+    walidację i funkcje UX jak tooltips.
+  expected_output: >
+    FrontendOutput z main_app_code, component_files, features_implemented
+    i usage_instructions.
+  agent: frontend_engineer
+
+test_planning_task:
+  description: >
+    Stwórz kompleksowy plan testów obejmujący wszystkie moduły backendu.
+    
+    Zaprojektuj test suites z przypadkami testowymi określającymi:
+    test_name, test_type, target_function, scenario, expected_outcome.
+    
+    Włącz testy jednostkowe, integracyjne, przypadków brzegowych i negatywne.
+    Celuj w 80%+ pokrycie.
+  expected_output: >
+    TestPlan z nazwą projektu, strategią, listą test suites
+    i całkowitą liczbą przypadków testowych.
+  agent: test_planner
+
+test_execution_task:
+  description: >
+    Zaimplementuj wszystkie testy zgodnie z TestPlan używając pytest.
+    
+    Używaj fixtures, parametrize, opisowych nazw testów i jasnych asercji.
+    Trzymaj testy szybkie i izolowane.
+  expected_output: >
+    TestImplementation z test_code (surowy Python bez Markdown),
+    test_cases_count i coverage_areas.
+  agent: test_engineer
+
+code_review_task:
+  description: >
+    Przejrzyj cały zaimplementowany kod pod kątem jakości, bezpieczeństwa,
+    wydajności i najlepszych praktyk.
+    
+    Dla każdego znaleziska określ: kategorię, ważność, tytuł, opis,
+    lokalizację i sugestię naprawy.
+  expected_output: >
+    CodeReview z oceną ogólną (1-10), podsumowaniem, findings,
+    positive_highlights i rekomendacją.
+  agent: code_reviewer
+
+documentation_task:
+  description: >
+    Stwórz kompleksową dokumentację: README z opisem projektu,
+    listą funkcji, instrukcjami instalacji, przewodnikiem szybkiego startu
+    i przykładami użycia.
+    
+    Używaj jasnego języka z blokami kodu i działającymi przykładami.
+  expected_output: >
+    Documentation z readme_content, installation_steps i usage_examples.
+  agent: documentation_writer
